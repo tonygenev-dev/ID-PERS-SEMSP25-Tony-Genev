@@ -46,16 +46,46 @@ TEST_F(MeasurementSeriesTest, test_whenAddingValueItIsStored)
 
 TEST_F(MeasurementSeriesTest, test_whenAddingMultipleValuesTheyAreStored)
 {
+    int someValues[] = {42, 24, 7, 13};  
+    int size = sizeof(someValues) / sizeof(someValues[0]);  
+
+    // Add all values
+    for (int i = 0; i < size; i++) {
+        mExamplePtr->addValue(someValues[i]);
+    }
+
+    // Check number of stored values
+    int number = 0;
+    mExamplePtr->getNrOfMeasurements(number);
+    EXPECT_EQ(size, number);
+
+    // Verify each stored value
+    for (int i = 0; i < size; i++) {
+        EXPECT_EQ(someValues[i], mExamplePtr->getValue(i));
+    }
+    
     
 }
 
 TEST_F(MeasurementSeriesTest, test_whenValueDoesNotExist)
 {
+    const int nonExistentValue = 12;
+    const int existentValue = 42;
+
+    mExamplePtr->addValue(existentValue);
+
+    EXPECT_FALSE(mExamplePtr->valueExists(nonExistentValue));
+    EXPECT_TRUE(mExamplePtr->valueExists(existentValue));
     
 }
 
 TEST_F(MeasurementSeriesTest, test_whenNameIsUpdatedThenItStored)
 {
+    const string newName = "newName";
+
+    mExamplePtr->setName(newName);
+    
+    EXPECT_EQ(newName, mExamplePtr->getName());
     
 }
 
