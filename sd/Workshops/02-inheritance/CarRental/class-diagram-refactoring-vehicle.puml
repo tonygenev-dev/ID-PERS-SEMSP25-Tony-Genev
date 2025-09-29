@@ -1,0 +1,84 @@
+@startuml
+' Base class Vehicle
+class Vehicle {
+    - std::string manufacturer
+    - std::string model
+    - int licencePlate
+    - int kilometers
+    - std::unique_ptr<SimpleDate> rentalDate
+    + Vehicle(std::string, std::string, int)
+    + std::string GetManufacturer()
+    + std::string GetModel()
+    + int GetLicencePlate()
+    + int GetKilometers()
+    + bool IsAvailable()
+    + bool Rent(SimpleDate)
+    + double Return(SimpleDate, int)
+    + std::string ToString()
+}
+
+' Derived classes
+class Sedan {
+    - bool hasTowbar
+    + Sedan(std::string, std::string, int, bool)
+    + bool HasTowbarFunc()
+    ' + override CalculateRentalCosts(...)
+}
+
+class Limousine {
+    - bool hasMinibar
+    + Limousine(std::string, std::string, int, bool)
+    + bool HasMinibarFunc()
+    ' + override CalculateRentalCosts(...)
+}
+
+class Truck {
+    - int cargoSpace
+    - int maxWeight
+    + Truck(std::string, std::string, int, int, int)
+    + int GetCargoSpace()
+    + int GetMaxWeight()
+    ' + override CalculateRentalCosts(...)
+}
+
+class OffRoad {
+    - bool has4WheelDrive
+    + OffRoad(std::string, std::string, int, bool)
+    + bool Has4WheelDriveFunc()
+    ' + override CalculateRentalCosts(...)
+}
+
+' SimpleDate
+class SimpleDate {
+    - int day
+    - int month
+    - int year
+    + SimpleDate(int, int, int)
+    + int GetDay()
+    + int GetMonth()
+    + int GetYear()
+    + int DaysDifference(SimpleDate)
+    + std::string ToString()
+}
+
+' RentalAdministration
+class RentalAdministration {
+    - std::vector<Vehicle*> vehicles
+    + RentalAdministration()
+    + std::vector<Vehicle*> GetVehicles()
+    + void Add(Vehicle*)
+    + bool RentCar(int, SimpleDate)
+    + double ReturnCar(int, SimpleDate, int)
+}
+
+' Inheritance
+Sedan --|> Vehicle
+Limousine --|> Vehicle
+Truck --|> Vehicle
+OffRoad --|> Vehicle
+
+' Associations
+Vehicle --> SimpleDate : rentalDate
+RentalAdministration "1" o-- "*" Vehicle
+
+@enduml

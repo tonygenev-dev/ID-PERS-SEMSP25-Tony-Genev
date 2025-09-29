@@ -1,0 +1,100 @@
+@startuml
+' Define SimpleDate
+class SimpleDate {
+    - int day
+    - int month
+    - int year
+    + SimpleDate(int, int, int)
+    + int GetDay()
+    + int GetMonth()
+    + int GetYear()
+    + int DaysDifference(SimpleDate)
+    + std::string ToString()
+}
+
+' Sedan
+class Sedan {
+    - std::string manufacturer
+    - std::string model
+    - int licencePlate
+    - int kilometers
+    - bool hasTowbar
+    - SimpleDate* rentalDate
+    + Sedan(std::string, std::string, int, bool)
+    + std::string GetManufacturer()
+    + std::string GetModel()
+    + int GetLicencePlate()
+    + int GetKilometers()
+    + bool IsAvailable()
+    + bool HasTowbarFunc()
+    + bool Rent(SimpleDate)
+    + double Return(SimpleDate, int)
+    + std::string ToString()
+}
+
+' Limousine
+class Limousine {
+    - std::string manufacturer
+    - std::string model
+    - int licencePlate
+    - int kilometers
+    - bool hasMinibar
+    - SimpleDate* rentalDate
+    + Limousine(std::string, std::string, int, bool)
+    + std::string GetManufacturer()
+    + std::string GetModel()
+    + int GetLicencePlate()
+    + int GetKilometers()
+    + bool IsAvailable()
+    + bool HasMinibarFunc()
+    + bool Rent(SimpleDate)
+    + double Return(SimpleDate, int)
+    + std::string ToString()
+}
+
+' Truck
+class Truck {
+    - std::string manufacturer
+    - std::string model
+    - int licencePlate
+    - int kilometers
+    - int cargoSpace
+    - int maxWeight
+    - SimpleDate* rentalDate
+    + Truck(std::string, std::string, int, int, int)
+    + std::string GetManufacturer()
+    + std::string GetModel()
+    + int GetLicencePlate()
+    + int GetKilometers()
+    + int GetCargoSpace()
+    + int GetMaxWeight()
+    + bool IsAvailable()
+    + bool Rent(SimpleDate)
+    + double Return(SimpleDate, int)
+    + std::string ToString()
+}
+
+' RentalAdministration
+class RentalAdministration {
+    - std::vector<Sedan*> sedans
+    - std::vector<Limousine*> limousines
+    - std::vector<Truck*> trucks
+    + RentalAdministration()
+    + std::vector<Sedan*> GetSedans()
+    + std::vector<Limousine*> GetLimousines()
+    + std::vector<Truck*> GetTrucks()
+    + void Add(Sedan*)
+    + void Add(Limousine*)
+    + void Add(Truck*)
+    + bool RentCar(int, SimpleDate)
+    + double ReturnCar(int, SimpleDate, int)
+}
+
+' Relationships
+Sedan --> SimpleDate : rentalDate
+Limousine --> SimpleDate : rentalDate
+Truck --> SimpleDate : rentalDate
+
+RentalAdministration "1" o-- "*" Sedan
+RentalAdministration "1" o-- "*" Limousine
+RentalAdministration "1" o-- "*" Truck

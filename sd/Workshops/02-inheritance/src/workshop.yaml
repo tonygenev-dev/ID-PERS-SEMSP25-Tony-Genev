@@ -1,0 +1,12 @@
+workshop:
+  name: Inheritance with a Car Rental application that has gone bad
+  description : |
+    You will experience what happens when object oriented code goes bad and has
+    much code duplication. The code become hard to maintain and harder to read 
+    than necessary. By use of inheritance code duplication can be removed. 
+    You learn new ways to work with object with similar methods that can 
+    still have different behavior.
+  modules:    
+    - inheritance
+  order:
+    2
