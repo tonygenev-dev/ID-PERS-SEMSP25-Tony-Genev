@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../.."
+		},
+		{
+			"name": "RTOS start",
+			"path": "../../RTOS start"
+		},
+		{
+			"name": "RTOS-Blink",
+			"path": ".."
+		}
+	],
+	"settings": {}
+}
