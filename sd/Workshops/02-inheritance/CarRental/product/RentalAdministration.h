@@ -1,39 +1,31 @@
 #pragma once
 #include <vector>
-#include <memory>
+#include <string>
 
+class Vehicle;
 class Sedan;
 class Limousine;
 class Truck;
-class SimpleDate;
 class OffRoad;
-
-using namespace std;
+class SimpleDate;
 
 class RentalAdministration {
 public:
-    // Constructor
     RentalAdministration();
+    ~RentalAdministration();
 
-    // Getters for the collections (returns a copy)
-    vector<Sedan*> GetSedans() const;
-    vector<Limousine*> GetLimousines() const;
-    vector<Truck*> GetTrucks() const;
-    vector<OffRoad*> GetOffRoads() const;
+    void Add(Vehicle* vehicle);
+    bool RentCar(const std::string& licencePlate, const SimpleDate& rentalDate);
+    double ReturnCar(const std::string& licencePlate, const SimpleDate& returnDate, int kilometers);
 
-    // Add vehicles
-    void Add(Sedan* sedan);
-    void Add(Limousine* limousine);
-    void Add(Truck* truck);
-    void Add(OffRoad* offRoad);
+    std::vector<Sedan*> GetSedans() const;
+    std::vector<Limousine*> GetLimousines() const;
+    std::vector<Truck*> GetTrucks() const;
+    std::vector<OffRoad*> GetOffRoads() const;
 
-    // Rent and return vehicles
-    bool RentCar(const string& licencePlate, const SimpleDate& rentalDate);
-    double ReturnCar(const string& licencePlate, const SimpleDate& returnDate, int kilometers);
+    // convenience: return all vehicles
+    std::vector<Vehicle*> GetAllVehicles() const;
 
 private:
-    vector<Sedan*> sedans;
-    vector<Limousine*> limousines;
-    vector<Truck*> trucks;
-    vector<OffRoad*> offRoads;
+    std::vector<Vehicle*> vehicles;
 };

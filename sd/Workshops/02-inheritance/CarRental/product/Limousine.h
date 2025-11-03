@@ -1,42 +1,23 @@
 #pragma once
-
-#include "SimpleDate.h"
-
+#include "Vehicle.h"
 #include <string>
-#include <memory>
 
-using namespace std;
-
-class Limousine {
+class Limousine : public Vehicle {
 public:
-    // Constructor
-    Limousine(const string& manufacturer, const string& model, const string& licencePlate, bool hasMinibar, int buildYear);
-    virtual ~Limousine();
+    // Signature must match Limousine.cpp exactly (manufacturer, model, licencePlate, buildYear, withMiniBar)
+    Limousine(const std::string& manufacturer,
+              const std::string& model,
+              const std::string& licencePlate,
+              int buildYear,
+              bool withMiniBar);
 
-    // Getters
-    const string& GetManufacturer() const;
-    const string& GetModel() const;
-    const string& GetLicencePlate() const;
-    int GetKilometers() const;
-    bool IsAvailable() const;
-    bool HasMinibarFunc() const; // Avoids name clash with member
-    int GetBuildYear() const;
+    bool HasMinibar() const;
 
-    // Rental functions
-    bool Rent(const SimpleDate& rentalDate);
-    double Return(const SimpleDate& returnDate, int kilometers);
-
-    // String representation
-    string ToString() const;
+    // Vehicle interface implementations
+    std::string ToString() const override;
+    std::string getType() const override { return "Limousine"; }
+    double CalculateRentalCosts(int daysRented, int kilometersDriven) const override;
 
 private:
-    string manufacturer;
-    string model;
-    string licencePlate;
-    int kilometers;
-    bool hasMinibar;
-    SimpleDate* rentalDate; // nullptr if not rented
-    int buildYear;
-
-    double CalculateRentalCosts(int daysRented, int kilometersDriven) const;
+    bool hasMiniBar;
 };

@@ -1,44 +1,25 @@
 #pragma once
-
-#include "SimpleDate.h"
-
+#include "Vehicle.h"
 #include <string>
-#include <memory>
 
-using namespace std;
-
-class Truck {
+class Truck : public Vehicle {
 public:
-    // Constructor
-    Truck(const string& manufacturer, const string& model, const string& licencePlate, int cargoSpace, int maxWeight, int buildYear);
-    virtual ~Truck();
+    Truck(const std::string& manufacturer,
+          const std::string& model,
+          const std::string& licencePlate,
+          double cargoSpace,
+          int maxWeight,
+          int buildYear);
 
-    // Getters
-    const string& GetManufacturer() const;
-    const string& GetModel() const;
-    const string& GetLicencePlate() const;
-    int GetKilometers() const;
-    int GetCargoSpace() const;
+    // accessors declared here (were missing)
+    double GetCargoSpace() const;
     int GetMaxWeight() const;
-    bool IsAvailable() const;
-    int GetBuildYear() const;
 
-    // Rental functions
-    bool Rent(const SimpleDate& rentalDate);
-    double Return(const SimpleDate& returnDate, int kilometers);
-
-    // String representation
-    string ToString() const;
+    std::string ToString() const override;
+    std::string getType() const override { return "Truck"; }
+    double CalculateRentalCosts(int daysRented, int kilometersDriven) const override;
 
 private:
-    string manufacturer;
-    string model;
-    string licencePlate;
-    int kilometers;
-    int cargoSpace;
+    double cargoSpace;
     int maxWeight;
-    SimpleDate* rentalDate; // nullptr if not rented
-    int buildYear;
-
-    double CalculateRentalCosts(int daysRented, int kilometersDriven) const;
 };

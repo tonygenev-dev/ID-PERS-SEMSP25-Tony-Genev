@@ -111,23 +111,18 @@ void AddVehicleMenu(RentalAdministration& admin) {
 }
 
 void DisplayAdministration(const RentalAdministration& admin) {
-    cout << "\n--- Sedans ---\n";
-    for (auto sedan : admin.GetSedans()) {
-        cout << sedan->ToString() << endl;
+    auto all = admin.GetAllVehicles();
+    std::cout << "\nTotal vehicles: " << all.size() << "\n";
+    if (all.empty()) {
+        std::cout << "No vehicles available.\n\n";
+        return;
     }
-    cout << "\n--- Limousines ---\n";
-    for (auto limo : admin.GetLimousines()) {
-        cout << limo->ToString() << endl;
+
+    // print each vehicle using its ToString()
+    for (auto* v : all) {
+        if (v) std::cout << v->ToString() << '\n';
     }
-    cout << "\n--- Trucks ---\n";
-    for (auto truck : admin.GetTrucks()) {
-        cout << truck->ToString() << endl;
-    }
-    cout << "\n--- OffRoads ---\n";
-    for (auto offRoad : admin.GetOffRoads()) {
-        cout << offRoad->ToString() << endl;
-    }
-    cout << endl;
+    std::cout << std::endl;
 }
 
 void RentVehicleMenu(RentalAdministration& admin) {

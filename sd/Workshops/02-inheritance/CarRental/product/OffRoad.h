@@ -1,42 +1,23 @@
 #pragma once
-
-#include "SimpleDate.h"
-
+#include "Vehicle.h"
 #include <string>
-#include <memory>
 
-using namespace std;
-
-class OffRoad { 
+class OffRoad : public Vehicle {
 public:
-    // Constructor
-    OffRoad(const string& manufacturer, const string& model, const string& licencePlate, bool hasFourWheelDrive, int buildYear);    
-    virtual ~OffRoad();
+    // Matches usage in main: (manufacturer, model, licencePlate, hasFourWheelDrive, buildYear)
+    OffRoad(const std::string& manufacturer,
+           const std::string& model,
+           const std::string& licencePlate,
+           bool hasFourWheelDrive,
+           int buildYear);
 
-    // Getters
-    const string& GetManufacturer() const;
-    const string& GetModel() const;
-    const string& GetLicencePlate() const;
-    int GetKilometers() const;
-    bool IsAvailable() const;
-    bool HasFourWheelDriveFunc() const; // Avoids name clash with member
-    int GetBuildYear() const;
+    bool HasFourWheelDrive() const;
 
-    // Rental functions
-    bool Rent(const SimpleDate& rentalDate);
-    double Return(const SimpleDate& returnDate, int kilometers);
-
-    // String representation
-    string ToString() const;
+    // Vehicle interface
+    std::string ToString() const override;
+    std::string getType() const override { return "OffRoad"; }
+    double CalculateRentalCosts(int daysRented, int kilometersDriven) const override;
 
 private:
-    string manufacturer;
-    string model;
-    string licencePlate;
-    int kilometers;
-    bool hasFourWheelDrive;
-    SimpleDate* rentalDate; // nullptr if not rented
-    int buildYear;
-
-    double CalculateRentalCosts(int daysRented, int kilometersDriven) const;
+    bool hasFourWheelDrive_;
 };

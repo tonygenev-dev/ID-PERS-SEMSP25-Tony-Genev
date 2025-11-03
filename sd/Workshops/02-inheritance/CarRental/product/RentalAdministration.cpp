@@ -1,109 +1,74 @@
 #include "RentalAdministration.h"
+#include "Vehicle.h"
 #include "Sedan.h"
 #include "Limousine.h"
 #include "Truck.h"
-#include "SimpleDate.h"
 #include "OffRoad.h"
+#include "SimpleDate.h"
+#include <algorithm>
+#include <iostream>
 
-// Constructor
-RentalAdministration::RentalAdministration() {}
+RentalAdministration::RentalAdministration() = default;
 
-// Getters (returns a copy of the pointers)
-vector<Sedan*> RentalAdministration::GetSedans() const {
-    return sedans;
+RentalAdministration::~RentalAdministration() {
+    for (auto* v : vehicles) delete v;
+    vehicles.clear();
 }
 
-vector<Limousine*> RentalAdministration::GetLimousines() const {
-    return limousines;
-}
-
-vector<Truck*> RentalAdministration::GetTrucks() const {
-    return trucks;
-}
-
-vector<OffRoad*> RentalAdministration::GetOffRoads() const {
-    return offRoads;
-}
-
-// Add vehicles
-void RentalAdministration::Add(Sedan* sedan) {
-    if (sedan != nullptr) {
-        sedans.push_back(sedan);
+void RentalAdministration::Add(Vehicle* vehicle) {
+    if (vehicle) {
+        vehicles.push_back(vehicle);
+        std::cout << "[DEBUG] Added vehicle: " << vehicle->GetLicencePlate() << "\n";
     }
 }
 
-void RentalAdministration::Add(Limousine* limousine) {
-    if (limousine != nullptr) {
-        limousines.push_back(limousine);
-    }
-}
-
-void RentalAdministration::Add(Truck* truck) {
-    if (truck != nullptr) {
-        trucks.push_back(truck);
-    }
-}
-
-void RentalAdministration::Add(OffRoad* offRoad) {
-    if (offRoad != nullptr) {
-        offRoads.push_back(offRoad);
-    }
-}
-
-// Rent a car by licence plate
-bool RentalAdministration::RentCar(const string& licencePlate, const SimpleDate& rentalDate) {
-    // Try to find the car with the given licence plate. Is it a Sedan?
-    for (auto sedan : sedans) {
-        if (sedan->GetLicencePlate() == licencePlate) {
-            return sedan->Rent(rentalDate);
+bool RentalAdministration::RentCar(const std::string& licencePlate,
+                                   const SimpleDate& rentalDate)
+{
+    for (auto* v : vehicles) {
+        if (v->GetLicencePlate() == licencePlate) {
+            return v->Rent(rentalDate);
         }
     }
-    // Try Limousine
-    for (auto limousine : limousines) {
-        if (limousine->GetLicencePlate() == licencePlate) {
-            return limousine->Rent(rentalDate);
-        }
-    }
-    // Try Truck
-    for (auto truck : trucks) {
-        if (truck->GetLicencePlate() == licencePlate) {
-            return truck->Rent(rentalDate);
-        }
-    }
-    // Try OffRoad
-    for (auto offRoad : offRoads) {
-        if (offRoad->GetLicencePlate() == licencePlate) {
-            return offRoad->Rent(rentalDate);
-        }
-    }
-    return false; // Not found
+    return false;
 }
 
-// Return a car by licence plate
-double RentalAdministration::ReturnCar(const string& licencePlate, const SimpleDate& returnDate, int kilometers) {
-    // Try to find the car with the given licence plate. Is it a Sedan?
-    for (auto sedan : sedans) {
-        if (sedan->GetLicencePlate() == licencePlate) {
-            return sedan->Return(returnDate, kilometers);
+double RentalAdministration::ReturnCar(const std::string& licencePlate,
+                                       const SimpleDate& returnDate,
+                                       int kilometers)
+{
+    for (auto* v : vehicles) {
+        if (v->GetLicencePlate() == licencePlate) {
+            return v->Return(returnDate, kilometers);
         }
     }
-    // Try Limousine
-    for (auto limousine : limousines) {
-        if (limousine->GetLicencePlate() == licencePlate) {
-            return limousine->Return(returnDate, kilometers);
-        }
-    }
-    // Try Truck
-    for (auto truck : trucks) {
-        if (truck->GetLicencePlate() == licencePlate) {
-            return truck->Return(returnDate, kilometers);
-        }
-    }
-    // Try OffRoad
-    for (auto offRoad : offRoads) {
-        if (offRoad->GetLicencePlate() == licencePlate) {
-            return offRoad->Return(returnDate, kilometers);
-        }
-    }
-    return -1.0; // Not found
+    return -1.0;
+}
+
+std::vector<Sedan*> RentalAdministration::GetSedans() const {
+    std::vector<Sedan*> out;
+    for (auto* v : vehicles) if (auto* s = dynamic_cast<Sedan*>(v)) out.push_back(s);
+    return out;
+}
+
+std::vector<Limousine*> RentalAdministration::GetLimousines() const {
+    std::vector<Limousine*> out;
+    for (auto* v : vehicles) if (auto* l = dynamic_cast<Limousine*>(v)) out.push_back(l);
+    return out;
+}
+
+std::vector<Truck*> RentalAdministration::GetTrucks() const {
+    std::vector<Truck*> out;
+    for (auto* v : vehicles) if (auto* t = dynamic_cast<Truck*>(v)) out.push_back(t);
+    return out;
+}
+
+std::vector<OffRoad*> RentalAdministration::GetOffRoads() const {
+    std::vector<OffRoad*> out;
+    for (auto* v : vehicles) if (auto* o = dynamic_cast<OffRoad*>(v)) out.push_back(o);
+    return out;
+}
+
+std::vector<Vehicle*> RentalAdministration::GetAllVehicles() const {
+    return vehicles;
 }

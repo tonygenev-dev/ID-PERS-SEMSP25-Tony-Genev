@@ -1,40 +1,21 @@
 #pragma once
-
-#include "SimpleDate.h"
-
+#include "Vehicle.h"
 #include <string>
-#include <memory>
 
-class Sedan {
+class Sedan : public Vehicle {
 public:
-    // Creates a sedan
-    Sedan(const string& manufacturer, const string& model, const string& licencePlate, bool hasTowbar, int buildYear);
-    virtual ~Sedan();
+    Sedan(const std::string& manufacturer,
+          const std::string& model,
+          const std::string& licencePlate,
+          int buildYear,
+          bool hasTowbar);
 
-    // Getters
-    const string& GetManufacturer() const;
-    const string& GetModel() const;
-    const string& GetLicencePlate() const;
-    int GetKilometers() const;
-    bool IsAvailable() const;
-    bool HasTowbarFunc() const; // 'HasTowbar' is a member, so method renamed
-    int GetBuildYear() const;
+    bool HasTowbar() const;
 
-    // Rental functions
-    bool Rent(const SimpleDate& rentalDate);
-    double Return(const SimpleDate& returnDate, int kilometers);
-
-    // String representation
-    string ToString() const;
+    std::string ToString() const override;
+    std::string getType() const override { return "Sedan"; }
+    double CalculateRentalCosts(int daysRented, int kilometersDriven) const override;
 
 private:
-    string manufacturer;
-    string model;
-    string licencePlate;
-    int kilometers;
     bool hasTowbar;
-    SimpleDate* rentalDate;
-    int buildYear; 
-
-    double CalculateRentalCosts(int daysRented, int kilometersDriven) const;
 };
