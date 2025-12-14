@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../CAN Bus - two ecu"
+		},
+		{
+			"name": "CAN Bus - two ecu receive",
+			"path": ".."
+		},
+		{
+			"name": "CAN Bus Device B",
+			"path": "../../CAN Bus Device B"
+		}
+	],
+	"settings": {}
+}
