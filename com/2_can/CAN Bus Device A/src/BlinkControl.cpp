@@ -8,8 +8,8 @@ static bool blinkRight = false;
 static bool leftState  = false;
 static bool rightState = false;
 
-static unsigned long lastToggle = 0;
-static constexpr unsigned long BLINK_MS = 500;
+const int lastToggle = 0;
+const int BLINK_MS = 500;
 
 void blinkInit(uint8_t leftPin, uint8_t rightPin) {
     leftLED = leftPin;

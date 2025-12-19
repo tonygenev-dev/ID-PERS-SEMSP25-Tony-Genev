@@ -3,8 +3,8 @@
 #include "CANHandler.h"
 #include "BlinkControl.h"
 
-constexpr uint8_t LED_LEFT_PIN  = 7;
-constexpr uint8_t LED_RIGHT_PIN = 8;
+const int LED_LEFT_PIN  = 7;
+const int LED_RIGHT_PIN = 8;
 
 void setup() {
     uartInit(115200);

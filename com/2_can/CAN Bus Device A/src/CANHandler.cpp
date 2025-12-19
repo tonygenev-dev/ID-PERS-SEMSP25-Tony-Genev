@@ -3,8 +3,8 @@
 #include "UART.h"
 #include <SPI.h>
 
-constexpr uint8_t CAN_CS_PIN  = 10;
-constexpr uint8_t CAN_INT_PIN = 2;
+const int CAN_CS_PIN  = 10;
+const int CAN_INT_PIN = 2;
 
 static MCP_CAN CAN0(CAN_CS_PIN);
 
