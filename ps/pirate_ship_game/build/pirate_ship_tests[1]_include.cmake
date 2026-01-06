@@ -1,0 +1,5 @@
+if(EXISTS "/home/tony/Semester 3/Challenges_and_Workshops/id-pers-semsp-25-tony-genev/ps/pirate_ship_game/build/pirate_ship_tests[1]_tests.cmake")
+  include("/home/tony/Semester 3/Challenges_and_Workshops/id-pers-semsp-25-tony-genev/ps/pirate_ship_game/build/pirate_ship_tests[1]_tests.cmake")
+else()
+  add_test(pirate_ship_tests_NOT_BUILT pirate_ship_tests_NOT_BUILT)
+endif()

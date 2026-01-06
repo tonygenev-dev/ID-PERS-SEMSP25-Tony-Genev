@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20260106-1721-Experimental"
+	Name="(empty)"
+	Generator="ctest-3.28.3"
+	CompilerName=""
+	CompilerVersion=""
+	OSName="Linux"
+	Hostname="Tony"
+	OSRelease="5.15.167.4-microsoft-standard-WSL2"
+	OSVersion="#1 SMP Tue Nov 5 00:21:55 UTC 2024"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="AuthenticAMD"
+	VendorID="Advanced Micro Devices"
+	FamilyID="23"
+	ModelID="96"
+	ProcessorCacheSize="512"
+	NumberOfLogicalCPU="16"
+	NumberOfPhysicalCPU="8"
+	TotalVirtualMemory="2048"
+	TotalPhysicalMemory="7650"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="2894.59"
+	>
+	<Testing>
+		<StartDateTime>Jan 06 19:22 EET</StartDateTime>
+		<StartTestTime>1767720131</StartTestTime>
+		<TestList>
+			<Test>./ShipManagerTest.ShipMovement</Test>
+		</TestList>
+		<Test Status="passed">
+			<Name>ShipManagerTest.ShipMovement</Name>
+			<Path>.</Path>
+			<FullName>./ShipManagerTest.ShipMovement</FullName>
+			<FullCommandLine>/home/tony/Semester\ 3/Challenges_and_Workshops/id-pers-semsp-25-tony-genev/ps/pirate_ship_game/build/pirate_ship_tests "--gtest_filter=ShipManagerTest.ShipMovement" "--gtest_also_run_disabled_tests"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.00336131</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/tony/Semester\ 3/Challenges_and_Workshops/id-pers-semsp-25-tony-genev/ps/pirate_ship_game/build/pirate_ship_tests "--gtest_filter=ShipManagerTest.ShipMovement" "--gtest_also_run_disabled_tests"</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value encoding="base64" compression="gzip">eJyNUE1rwzAMvedX6NgeHO+DXQY9jG30MNaNZmOHUoLbqI6ZIwXb6di/n52U0hZGq5PEe3p6T/OOyJCGRhkajWHjuAFZc4MyMP3KAhv0AR3cysdaWYuk0ZeKqvKL3bevufXSVKJF54XHxrfi5k6kTaGRcCsj3BqnApa+Nm2pVRRedcZWsqwwgppZWwzxhvBufTDKfkxdmazl63U244D3MO0p8BER2BibvE2giOKvipRGl4C8n3kbzVPIFpN9LWG+y3sNoVdIeXe970zAPFuIfS1hanml7IAjbY1jSprgMYiuPSEfap44yhYw/5xBX8szdgcWvL2cYcLoCho/vtjDwIfAQdlxdlnOgMqJin/o+Iv/fQ+covz4Tozz/lAUz08p+MDNsz/UddD3====</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>Jan 06 19:22 EET</EndDateTime>
+		<EndTestTime>1767720131</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

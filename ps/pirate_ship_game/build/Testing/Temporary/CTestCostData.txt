@@ -1,0 +1,12 @@
+ObstacleManagerTest.SpawnsObstacles 1 0.00637959
+ObstacleManagerTest.RemoveObstacle 1 0.00486018
+GameEngineTest.Initialization 1 0.00607246
+GameEngineTest.UpdateCallsObstacleManager 1 0.00497805
+ScoreManagerTest.SaveAndLoadScore 1 0.00521805
+ScoreManagerTest.UpdateExistingScore 1 0.00472994
+ScoreManagerTest.DontUpdateWithLowerScore 1 0.00509743
+ScoreManagerTest.LoadMalformedFile 1 0.0036859
+ScoreManagerTest.Sorting 1 0.00508171
+ShipManagerTest.Initialization 1 0.0138412
+ShipManagerTest.ShipMovement 1 0.00336131
+---

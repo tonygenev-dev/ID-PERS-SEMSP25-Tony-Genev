@@ -1,0 +1,14 @@
+# Target labels
+ ftxui-populate
+# Source files and their labels
+/home/tony/Semester 3/Challenges_and_Workshops/id-pers-semsp-25-tony-genev/ps/pirate_ship_game/build/_deps/ftxui-subbuild/CMakeFiles/ftxui-populate
+/home/tony/Semester 3/Challenges_and_Workshops/id-pers-semsp-25-tony-genev/ps/pirate_ship_game/build/_deps/ftxui-subbuild/CMakeFiles/ftxui-populate.rule
+/home/tony/Semester 3/Challenges_and_Workshops/id-pers-semsp-25-tony-genev/ps/pirate_ship_game/build/_deps/ftxui-subbuild/CMakeFiles/ftxui-populate-complete.rule
+/home/tony/Semester 3/Challenges_and_Workshops/id-pers-semsp-25-tony-genev/ps/pirate_ship_game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-build.rule
+/home/tony/Semester 3/Challenges_and_Workshops/id-pers-semsp-25-tony-genev/ps/pirate_ship_game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-configure.rule
+/home/tony/Semester 3/Challenges_and_Workshops/id-pers-semsp-25-tony-genev/ps/pirate_ship_game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-download.rule
+/home/tony/Semester 3/Challenges_and_Workshops/id-pers-semsp-25-tony-genev/ps/pirate_ship_game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-install.rule
+/home/tony/Semester 3/Challenges_and_Workshops/id-pers-semsp-25-tony-genev/ps/pirate_ship_game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-mkdir.rule
+/home/tony/Semester 3/Challenges_and_Workshops/id-pers-semsp-25-tony-genev/ps/pirate_ship_game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-patch.rule
+/home/tony/Semester 3/Challenges_and_Workshops/id-pers-semsp-25-tony-genev/ps/pirate_ship_game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-test.rule
+/home/tony/Semester 3/Challenges_and_Workshops/id-pers-semsp-25-tony-genev/ps/pirate_ship_game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-update.rule

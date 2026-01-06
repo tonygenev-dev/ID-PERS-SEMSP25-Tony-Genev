@@ -1,0 +1,200 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "libpirate_ship_lib.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"target_link_libraries",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 13,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 32,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 25,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"includes" : 
+			[
+				{
+					"backtrace" : 3,
+					"path" : "/home/tony/Semester 3/Challenges_and_Workshops/id-pers-semsp-25-tony-genev/ps/pirate_ship_game/entities"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/tony/Semester 3/Challenges_and_Workshops/id-pers-semsp-25-tony-genev/ps/pirate_ship_game/interfaces"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/tony/Semester 3/Challenges_and_Workshops/id-pers-semsp-25-tony-genev/ps/pirate_ship_game/input"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/tony/Semester 3/Challenges_and_Workshops/id-pers-semsp-25-tony-genev/ps/pirate_ship_game/engine"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/tony/Semester 3/Challenges_and_Workshops/id-pers-semsp-25-tony-genev/ps/pirate_ship_game/ui"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "/home/tony/Semester 3/Challenges_and_Workshops/id-pers-semsp-25-tony-genev/ps/pirate_ship_game/build/_deps/ftxui-src/include"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "screen::@b65f64d0ea8424dee96a"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "dom::@b65f64d0ea8424dee96a"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "component::@b65f64d0ea8424dee96a"
+		}
+	],
+	"id" : "pirate_ship_lib::@6890427a1f51a3e7e1df",
+	"name" : "pirate_ship_lib",
+	"nameOnDisk" : "libpirate_ship_lib.a",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "entities/Ship.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "entities/Obstacle.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "entities/Treasure.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "engine/ObstacleManager.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "engine/TreasureManager.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "engine/ShipManager.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "engine/BoardMap.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "engine/GameEngine.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "engine/ScoreManager.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "ui/GameApplication.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

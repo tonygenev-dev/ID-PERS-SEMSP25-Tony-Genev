@@ -1,0 +1,1 @@
+/usr/bin/g++ CMakeFiles/pirate_ship_game.dir/main.cpp.o -o pirate_ship_game  libpirate_ship_lib.a _deps/ftxui-build/libftxui-component.a _deps/ftxui-build/libftxui-dom.a _deps/ftxui-build/libftxui-screen.a 
